@@ -16,12 +16,42 @@ main {
   width: 100%;
   height: 100vh;
 }
+/* call to action */
+.cta {
+  z-index: 3;
+  position: fixed;
+  display: flex;
+  align-items: center;
+  width: calc(100% - 250px);
+  height: 100px;
+  top: 0;
+  right: 0;
+  padding: 20px;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+#button {
+  position: absolute;
+  right: 20px;
+  width: 200px;
+  height: 45px;
+  line-height: 50px;
+  border: 1px solid white;
+  border-radius: 25px;
+  color: white;
+  font-size: 12px;
+  text-transform: uppercase;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 1);
+}
 
 /* navigazione a sinistra */
 .left-main-nav {
+  position: relative;
+  display: flex;
   width: 250px;
   height: calc(100% - 90px);
   background-color: black;
+  overflow: hidden;
 }
 .logo {
   display: flex;
@@ -32,6 +62,13 @@ main {
 }
 .logo img {
   width: 150px;
+}
+#logo-xs {
+  color: white;
+  margin-left: 22px;
+  margin-top: 5px;
+  font-size: 30px;
+  margin-bottom: 10px;
 }
 .left-menu-active {
   display: flex;
@@ -54,14 +91,27 @@ main {
   border-left: 3px solid black;
   color: grey;
   font-weight: 300;
+  overflow: hidden;
 }
 .left-menu-active i {
   font-size: 25px;
   margin-right: 20px;
 }
+.left-menu-active a {
+  text-decoration: none;
+  color: white;
+}
 .left-menu i {
   font-size: 25px;
   margin-right: 20px;
+}
+.left-menu a {
+  text-decoration: none;
+  color: grey;
+}
+.left-menu a:hover {
+  text-decoration: none;
+  color: white;
 }
 h4 {
   color: white;
@@ -79,6 +129,7 @@ h4 {
   padding-left: 20px;
   color: grey;
   font-weight: 300;
+  overflow: hidden;
 }
 .left-menu-playlist i {
   background-color: grey;
@@ -86,12 +137,77 @@ h4 {
   padding: 12px;
   margin-right: 10px;
 }
+.nuova-playlist {
+  width: 250px;
+  height: 40%;
+  padding: 20px;
+  cursor: pointer;
+  overflow-y: auto;
+}
+.left-menu-playlist i:hover {
+  text-decoration: none;
+  color: black;
+  background-color: white;
+}
+.nuova-playlist li:hover {
+  text-decoration: none;
+  color: white;
+}
+.nuova-playlist ul {
+  list-style: none;
+  overflow-y: auto;
+}
+.nuova-playlist li {
+  line-height: 30px;
+  color: grey;
+}
+.instal-user-container {
+  width: 100%;
+  position: absolute;
+  background-color: black;
+  bottom: 0;
+  padding: 20px;
+  overflow: hidden;
+}
+.installa-app {
+  width: 100%;
+  padding-left: 7px;
+  padding-right: 20px;
+  border-bottom: 1px solid grey;
+}
+.installa-app i {
+  font-size: 10px;
+}
+.user {
+  width: 100%;
+  padding-left: 0px;
+  padding-right: 20px;
+}
+.user i {
+  background-color: grey;
+  color: white;
+  border-radius: 50%;
+  font-size: 20px;
+  padding: 3px;
+  overflow: hidden;
+}
+.user span {
+  color: white;
+  font-weight: bold;
+}
+
+#installa {
+  font-size: 15px;
+}
 
 /* parte con playlist */
-.playlist {
+.brani {
+  position: relative;
   width: calc(100% - 250px);
   height: calc(100% - 90px);
   background-color: #141A23;
+  padding-top: 110px;
+  overflow-y: auto;
 }
 
 footer {
@@ -101,4 +217,58 @@ footer {
   width: 100%;
   height: 90px;
   background-color: #282828;
+}
+
+/* media query */
+
+@media screen and (max-width: 551px) {
+  .cta {
+    width: calc(100% - 70px);
+  }
+  .left-main-nav {
+    width: 70px;
+  }
+  .brani {
+    width: calc(100% - 70px);
+  }
+  .logo {
+    display: none;
+  }
+  #logo-xs{
+    display: block;
+  }
+  .left-menu-active a {
+    display: none;
+  }
+  .left-menu a {
+    display: none;
+  }
+  h4 {
+    display: none;
+  }
+  .left-menu-playlist {
+    display: none;
+  }
+  .nuova-playlist {
+    display: none;
+  }
+  #installa {
+    display: none;
+  }
+  #user-name {
+    display: none;
+  }
+  .installa-app {
+    border: 0;
+  }
+
+}
+
+@media screen and (min-width: 552px) {
+
+  #logo-xs{
+    display: none;
+  }
+
+
 }
